@@ -1,476 +1,695 @@
-AWS AI Platform Engineering
-From DevOps Engineer → MLOps Engineer → LLMOps Engineer → AI Platform Engineer → AIOps Engineer
+# AWS AI Platform Engineering
 
-This is the roadmap we decided for your repository:
+## From DevOps Engineer → MLOps Engineer → LLMOps Engineer → AI Platform Engineer → AIOps Engineer
 
-aws-ai-platform-engineering
+---
 
+# 🎯 Objective
 
-The repository will not contain separate disconnected labs.
+Build a complete Enterprise AI Platform on AWS using:
 
-It will contain 10 progressive milestone projects that build a single enterprise platform.
+- Terraform
+- EKS
+- Docker
+- GitHub Actions
+- Amazon Bedrock
+- OpenSearch
+- RAG
+- MCP
+- Bedrock Agents
+- MLflow
+- SageMaker
+- CloudWatch
+- Prometheus
+- Grafana
+- OpenTelemetry
+- Lambda
+- EventBridge
 
-Final Platform We Will Build
+---
+
+# 🏗 Final Architecture
+
+```text
 GitHub
-    |
+   |
 GitHub Actions
-    |
+   |
 Terraform
-    |
+   |
 AWS
-    |
+   |
 EKS
-    |
-------------------------------------------------
-|                                              |
-|                   AI Platform                |
-|                                              |
-|  MLOps       LLMOps          AIOps           |
-|                                              |
-| SageMaker   Bedrock      CloudWatch          |
-| MLflow      RAG          Prometheus          |
-| Registry    Agents       Grafana             |
-| Endpoint    MCP          OpenTelemetry       |
-|             OpenSearch   Auto Remediation    |
-------------------------------------------------
+   |
+-----------------------------------------------------
+|                                                   |
+|                   AI Platform                     |
+|                                                   |
+|  MLOps       LLMOps               AIOps           |
+|                                                   |
+| SageMaker   Bedrock          CloudWatch           |
+| MLflow      RAG              Prometheus           |
+| Registry    OpenSearch       Grafana              |
+| Endpoint    MCP              OpenTelemetry        |
+|             Agents           Auto Remediation     |
+-----------------------------------------------------
+```
 
-Milestone 1
-Platform Bootstrap
-Goal
+---
 
-Build the AWS foundation.
+# Phase 1: Platform Engineering
 
-Topics
-AWS Account Setup
-AWS CLI
-Terraform Basics
-Remote State Management
-Networking
-Kubernetes Foundations
-AWS Services
-IAM
-S3
-DynamoDB
-VPC
-EKS
-ECR
-Labs
-Create Terraform Backend
-Create Remote State
-Deploy VPC
-Deploy EKS Cluster
-Deploy ECR Repository
-Install ALB Controller
-Install Metrics Server
-Install Karpenter
-Deploy Sample Application
-Outcome
+## Milestone 1: Platform Bootstrap
 
-✅ Production-ready Kubernetes platform
+### Topics
 
-Milestone 2
-AI Chat Application
-Goal
+- AWS Account Setup
+- IAM
+- AWS CLI
+- Terraform
+- Remote State Management
+- VPC
+- EKS
+- ECR
+- Kubernetes Foundations
 
-Build first AI application.
+### AWS Services
 
-Topics
-Python
-FastAPI
-Bedrock Runtime API
-Claude Models
-AWS Services
-Bedrock
-IAM
-Labs
+- IAM
+- S3
+- DynamoDB
+- VPC
+- EKS
+- ECR
+
+### Labs
+
+- Create Terraform Backend
+- Configure S3 State Storage
+- Configure DynamoDB Locking
+- Deploy VPC
+- Deploy EKS
+- Create ECR Repository
+- Install ALB Controller
+- Install Metrics Server
+- Install Karpenter
+- Deploy Test Application
+
+### Outcome
+
+✅ Production Kubernetes Platform
+
+---
+
+# Phase 2: Building AI Applications
+
+## Milestone 2: Bedrock Chat Application
+
+### Topics
+
+- Python
+- FastAPI
+- Bedrock Runtime API
+- Claude Models
+
+### Services
+
+- Amazon Bedrock
+- IAM
+
+### Labs
 
 Build:
 
+```text
 User
  |
 FastAPI
  |
 Claude
+```
 
-Outcome
+### Outcome
 
-✅ Working ChatGPT-style application
+✅ ChatGPT-style application
 
-Milestone 3
-Platform Deployment
-Goal
+---
 
-Run chatbot on Kubernetes.
+## Milestone 3: Deploy Application on EKS
 
-Topics
-Docker
-Kubernetes
-ALB Ingress
-Service Exposure
-AWS Services
-ECR
-EKS
-ALB
-Labs
-Build Docker Image
-Push Image to ECR
-Deploy to EKS
-Configure Ingress
-Access Application via ALB
-Outcome
+### Topics
 
-✅ AI application running on EKS
+- Docker
+- Kubernetes
+- Deployments
+- Services
+- ALB Ingress
 
-Milestone 4
-CI/CD Platform
-Goal
+### Services
 
-Automate deployments.
+- EKS
+- ECR
+- ALB
 
-Topics
-GitHub Actions
-GitOps
-Image Versioning
-AWS Services
-ECR
-EKS
-Labs
+### Labs
+
+- Containerize Application
+- Push Image to ECR
+- Deploy to EKS
+- Configure Ingress
+- Test Public Access
+
+### Outcome
+
+✅ AI Application Running on Kubernetes
+
+---
+
+## Milestone 4: CI/CD Platform
+
+### Topics
+
+- GitHub Actions
+- CI/CD
+- Container Automation
+
+### Services
+
+- GitHub Actions
+- ECR
+- EKS
+
+### Labs
 
 Pipeline:
 
+```text
 Git Push
     |
 Build
     |
-Security Scan
+Scan
     |
 Push ECR
     |
 Deploy EKS
+```
 
-Outcome
+### Outcome
 
-✅ Automated AI platform deployment
+✅ Automated Deployments
 
-Milestone 5
-Custom RAG Platform
-Goal
+---
 
-Build RAG from scratch.
+# Phase 3: LLMOps
 
-Topics
-Embeddings
-Chunking
-Semantic Search
-Retrieval
-AWS Services
-Bedrock
-S3
-OpenSearch
-Labs
+## Milestone 5: Custom RAG Platform
+
+### Topics
+
+- Embeddings
+- Chunking
+- Similarity Search
+- Semantic Search
+- Retrieval
+
+### Services
+
+- Bedrock
+- OpenSearch
+- S3
+
+### Labs
+
+```text
 PDF
  |
-Chunk
+Chunking
  |
 Embedding
  |
 OpenSearch
  |
 Claude
+```
 
-Outcome
+### Outcome
 
-✅ Enterprise document assistant
+✅ Enterprise RAG Chatbot
 
-Milestone 6
-Managed RAG
-Goal
+---
 
-Learn AWS-native RAG.
+## Milestone 6: Bedrock Knowledge Bases
 
-Topics
-Bedrock Knowledge Bases
-Data Sources
-Sync Jobs
-AWS Services
-Bedrock Knowledge Bases
-S3
-Labs
-Create Knowledge Base
-Connect S3
-Sync Documents
-Query Data
-Outcome
+### Topics
 
-✅ Managed RAG solution
+- Knowledge Bases
+- Data Sources
+- Sync Jobs
+- Managed Retrieval
 
-Milestone 7
-MCP Platform
-Goal
+### Services
 
-Allow LLMs to use tools.
+- Bedrock Knowledge Bases
+- S3
 
-Topics
-MCP Architecture
-MCP Server
-Tool Discovery
-Tool Execution
-Labs
+### Labs
 
-Create MCP Servers:
+- Create Knowledge Base
+- Configure Data Source
+- Sync Documents
+- Query Data
 
-AWS CLI
-EKS
-CloudWatch
-Cost Explorer
-Outcome
+### Outcome
 
-✅ Working MCP environment
+✅ Managed RAG Platform
 
-Milestone 8
-CloudOps Agent
-Goal
+---
 
-Build AI Operations Engineer.
+## Milestone 7: MCP Platform
 
-Topics
-Bedrock Agents
-Tool Calling
-Multi-Step Reasoning
-Labs
+### Topics
 
-Agent Capabilities:
+- MCP Basics
+- MCP Architecture
+- MCP Client
+- MCP Server
+- Tool Discovery
+- Tool Execution
 
-Show failing pods
+### Labs
+
+Build MCP Servers for:
+
+- AWS CLI
+- EKS
+- CloudWatch
+- Cost Explorer
+
+### Outcome
+
+✅ Tool-Enabled LLM
+
+---
+
+## Milestone 8: CloudOps Agent
+
+### Topics
+
+- Bedrock Agents
+- Tool Calling
+- Multi-Step Reasoning
+- Agent Workflows
+
+### Services
+
+- Bedrock Agents
+- MCP
+- CloudWatch
+- EKS
+
+### Labs
+
+Agent Use Cases:
+
+```text
+Show failed pods
 
 Show EKS node usage
 
+Show deployment status
+
 Show CloudWatch errors
 
-Show AWS spending
+Show AWS cost
+```
 
-Services
-Bedrock Agent
-MCP
-EKS
-CloudWatch
-Outcome
+### Outcome
 
-✅ AI-powered DevOps Assistant
+✅ AI-Powered Cloud Operations Assistant
 
-Milestone 9
-Observability Platform
-Goal
+---
 
-Monitor whole AI platform.
+# Phase 4: AIOps
 
-Topics
-Metrics
-Logs
-Traces
-Telemetry
-Tools
-CloudWatch
-Prometheus
-Grafana
-OpenTelemetry
-Labs
+## Milestone 9: Observability Platform
+
+### Topics
+
+- Metrics
+- Logs
+- Traces
+- Distributed Observability
+
+### Tools
+
+- CloudWatch
+- Prometheus
+- Grafana
+- OpenTelemetry
+
+### Labs
 
 Monitor:
 
-FastAPI
+- FastAPI
+- Bedrock
+- OpenSearch
+- MCP Calls
+- Agent Calls
+- Kubernetes
 
-Bedrock
+### Outcome
 
-RAG
+✅ Complete Observability Stack
 
-OpenSearch
+---
 
-MCP
+## Milestone 10: AIOps & Auto Remediation
 
-Agent
+### Topics
 
-Outcome
+- Alerting
+- Incident Management
+- EventBridge
+- Lambda
+- Systems Manager
 
-✅ Full observability stack
+### Services
 
-Milestone 10
-AIOps & Auto Remediation
-Goal
+- CloudWatch
+- EventBridge
+- Lambda
+- SNS
+- Systems Manager
 
-Self-healing AI platform.
-
-Topics
-Alerting
-Incident Management
-EventBridge
-Lambda Automation
-Services
-CloudWatch
-EventBridge
-SNS
-Lambda
-Systems Manager
-Labs
+### Labs
 
 Automate:
 
-Restart Failed Pods
+```text
+Restart Failed Pod
 
-Scale Workloads
+Scale Deployment
 
-Rollback Releases
+Delete Stuck Pod
 
-Generate Incidents
+Rollback Release
 
-Outcome
+Open Incident
 
-✅ Self-healing AI platform
+Send Alert
+```
 
-MLOps Track (Added After Milestone 10)
+### Outcome
 
-Because your primary goal is Bedrock/RAG/MCP first.
+✅ Self-Healing AI Platform
 
-Module M1
+---
 
-ML Fundamentals
+# Phase 5: MLOps
 
-Topics
+## Module M1: Machine Learning Fundamentals
 
-Classification
-Regression
-Feature Engineering
-Model Lifecycle
-Module M2
+### Topics
 
-MLflow
+- Regression
+- Classification
+- Clustering
+- Feature Engineering
+- Model Lifecycle
 
-Topics
+### Outcome
 
-Experiment Tracking
-Artifacts
-Metrics
+✅ Understand Core ML Concepts
 
-Labs
+---
 
-Deploy MLflow
-Track Experiments
-Module M3
+## Module M2: MLflow
 
-SageMaker Training
+### Topics
 
-Topics
+- Experiment Tracking
+- Metrics Tracking
+- Artifact Tracking
 
-Training Jobs
-Containers
+### Labs
 
-Labs
+- Deploy MLflow
+- Track Experiments
+- Compare Results
 
-Train XGBoost
-Train RandomForest
-Module M4
+### Outcome
 
-Hyperparameter Tuning
+✅ Experiment Management
 
-Labs
+---
 
-SageMaker HPO
-Module M5
+## Module M3: SageMaker Training
 
-Model Registry
+### Topics
 
-Labs
+- Training Jobs
+- Containers
+- Managed Training
 
-Version Models
-Promote Models
-Module M6
+### Labs
 
-Inference Endpoints
+Train:
 
-Labs
+- XGBoost
+- Random Forest
 
-Deploy Model
-Batch Inference
-Module M7
+### Outcome
 
-Model Monitoring
+✅ Managed ML Training
 
-Labs
+---
 
-Data Drift
-Model Drift
-MLOps Outcome
+## Module M4: Hyperparameter Tuning
 
-✅ SageMaker Engineer
- ✅ MLOps Engineer
+### Topics
 
-Repository Structure
-aws-ai-platform-engineering
-│
-├── 01-platform-bootstrap
-│
-├── 02-bedrock-chatbot
-│
-├── 03-eks-deployment
-│
-├── 04-cicd-platform
-│
-├── 05-custom-rag
-│
-├── 06-bedrock-knowledge-bases
-│
-├── 07-mcp-platform
-│
-├── 08-cloudops-agent
-│
-├── 09-observability-platform
-│
-├── 10-aiops-remediation
-│
-├── 11-mlflow
-│
-├── 12-sagemaker-training
-│
-├── 13-model-registry
-│
-├── 14-model-serving
-│
-├── 15-model-monitoring
-│
-├── docs
-│
-├── diagrams
-│
+- HPO Jobs
+- Optimization Strategies
+
+### Labs
+
+- Run Multiple Training Jobs
+- Compare Accuracy
+
+### Outcome
+
+✅ Automated Optimization
+
+---
+
+## Module M5: Feature Store
+
+### Topics
+
+- Feature Engineering
+- Feature Management
+- Reuse
+
+### Labs
+
+- Create Feature Store
+- Store Training Features
+
+### Outcome
+
+✅ Reusable ML Features
+
+---
+
+## Module M6: Model Registry
+
+### Topics
+
+- Versioning
+- Promotion
+- Rollback
+
+### Labs
+
+- Register Model V1
+- Register Model V2
+- Promote Production Model
+
+### Outcome
+
+✅ Model Governance
+
+---
+
+## Module M7: Model Serving
+
+### Topics
+
+- Real-Time Inference
+- Batch Inference
+- Multi-Model Endpoints
+
+### Labs
+
+Deploy:
+
+```text
+Model
+ |
+Endpoint
+ |
+Prediction
+```
+
+### Outcome
+
+✅ Production Inference
+
+---
+
+## Module M8: Model Monitoring
+
+### Topics
+
+- Data Drift
+- Model Drift
+- Bias Monitoring
+- Data Quality
+
+### Services
+
+- SageMaker Model Monitor
+
+### Labs
+
+- Detect Drift
+- Generate Monitoring Reports
+
+### Outcome
+
+✅ Production ML Monitoring
+
+---
+
+# 📁 Repository Structure
+
+```text
+aws-ai-platform-engineering/
+|
+├── 01-platform-bootstrap/
+├── 02-bedrock-chatbot/
+├── 03-eks-deployment/
+├── 04-cicd-platform/
+├── 05-custom-rag/
+├── 06-bedrock-knowledge-bases/
+├── 07-mcp-platform/
+├── 08-cloudops-agent/
+├── 09-observability-platform/
+├── 10-aiops-remediation/
+|
+├── 11-mlflow/
+├── 12-sagemaker-training/
+├── 13-feature-store/
+├── 14-model-registry/
+├── 15-model-serving/
+├── 16-model-monitoring/
+|
+├── architecture/
+├── diagrams/
+├── docs/
 └── README.md
+```
 
-Final Skills Gained
+---
 
-✅ AWS Platform Engineering
- ✅ Terraform
- ✅ Docker
- ✅ ECR
- ✅ EKS
- ✅ GitHub Actions
- ✅ Bedrock
- ✅ Claude
- ✅ OpenSearch
- ✅ RAG
- ✅ Knowledge Bases
- ✅ MCP
- ✅ Bedrock Agents
- ✅ CloudOps Agents
- ✅ CloudWatch
- ✅ Prometheus
- ✅ Grafana
- ✅ OpenTelemetry
- ✅ EventBridge
- ✅ Lambda Automation
- ✅ MLflow
- ✅ SageMaker
- ✅ Model Registry
- ✅ Model Monitoring
- ✅ AIOps
- ✅ MLOps
- ✅ LLMOps
+# 🎓 Skills Gained
 
-This sequence is optimized for your background as a Kubernetes/Terraform engineer: Platform → Bedrock → RAG → MCP → Agents → Observability → AIOps → MLOps, so you get a working enterprise AI product very early and learn the theory while building.
+## Platform Engineering
+
+- Terraform
+- AWS Networking
+- EKS
+- Docker
+- ECR
+- GitHub Actions
+
+## LLMOps
+
+- Bedrock
+- Claude
+- Prompt Engineering
+- OpenSearch
+- Embeddings
+- RAG
+- Knowledge Bases
+- MCP
+- Bedrock Agents
+
+## AIOps
+
+- CloudWatch
+- Prometheus
+- Grafana
+- OpenTelemetry
+- Incident Management
+- Auto Remediation
+
+## MLOps
+
+- MLflow
+- SageMaker
+- Feature Store
+- Model Registry
+- Training Pipelines
+- Model Monitoring
+
+---
+
+# 🚀 Final Capstone
+
+```text
+User
+ |
+ALB
+ |
+FastAPI
+ |
+Bedrock Agent
+ |
+------------------------------------------------
+|                    MCP                        |
+------------------------------------------------
+|         |          |            |             |
+EKS   CloudWatch   Cost      OpenSearch        ML
+                                  |
+                                 RAG
+                                  |
+                                 S3
+                                  |
+                             Documents
+```
+
+### Features
+
+- AI Chat Assistant
+- Enterprise RAG
+- Bedrock Agents
+- MCP Tools
+- CloudOps Assistant
+- Cost Assistant
+- Kubernetes Assistant
+- Observability Dashboard
+- Auto Remediation
+- ML Training Pipeline
+- Model Registry
+- Model Monitoring
+
+### Final Outcome
+
+✅ AWS Platform Engineer  
+✅ MLOps Engineer  
+✅ LLMOps Engineer  
+✅ AIOps Engineer  
+✅ AI Platform Engineer
